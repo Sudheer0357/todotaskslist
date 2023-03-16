@@ -1,0 +1,115 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  /* align-items: center; */
+  height: 100vh;
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid mediumblue;
+  margin: auto;
+  position: relative;
+}
+header {
+  width: 100%;
+  padding: 0.5rem 0.25em;
+  letter-spacing: 0.5rem;
+  background-color: mediumblue;
+  color: aliceblue;
+  text-align: center;
+}
+footer {
+  width: 100%;
+  padding: 0.25em;
+  background-color: mediumblue;
+  color: aliceblue;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+}
+
+.task {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin: 0.25rem 0 0.25rem 0.25rem;
+  background-color: #eee;
+}
+
+.task input[type="checkbox"] {
+  text-align: center;
+  min-width: 48px;
+  height: 2.5rem;
+  min-height: 48px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+.task input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+  color: green;
+}
+
+.task > label{
+  font-size: 0.75rem;
+  flex-grow: 1;
+}
+
+.task i {
+  min-width: 60px;
+  font-size: 2rem;
+  color: steelblue;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.task i:focus, 
+.task i:hover {
+  color: red;
+  outline: none;
+}
+button, input {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+button:focus, 
+button:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}
+.input-div{
+  display: flex;
+}
+.input-div input[type="text"]{
+  flex-grow: 1;
+}
