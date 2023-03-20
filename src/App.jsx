@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddTask from "./AddTask";
 import Content from "./Content";
 import Footer from "./Footer";
@@ -6,9 +6,13 @@ import Header from "./Header";
 import Search from "./Search";
 
 function App() {
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")));
+  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [search, setSearch] = useState("");
+  useEffect(() => {
+    tasks,
+      length ? localStorage.setItem("tasks", JSON.stringify(taskList)) : [];
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
