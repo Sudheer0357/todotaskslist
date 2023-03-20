@@ -11,9 +11,14 @@ const AddTask = ({ setNewTask, newTask, handleSubmit }) => {
         required
         type="text"
         value={newTask}
+        placeholder="Add Task"
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button className="btn btn-primary" onClick={() => ref.current.focus()}>
+      <button
+        className="btn btn-primary"
+        style={{ backgroundColor: "mediumblue" }}
+        onClick={() => ref.current.focus()}
+      >
         Add Task
       </button>
     </form>

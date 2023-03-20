@@ -11,7 +11,9 @@ const Content = ({ tasks, handleCheck, handleDelete }) => {
           handleDelete={handleDelete}
         />
       ) : (
-        <h1 style={{ textAlign: "center", marginTop: "25px" }}>No Tasks</h1>
+        <h1 style={{ textAlign: "center", marginTop: "25px", color: "white" }}>
+          No Tasks
+        </h1>
       )}
     </>
   );
