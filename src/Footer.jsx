@@ -3,7 +3,9 @@ import React from "react";
 const Footer = ({ length }) => {
   return (
     <footer>
-      {length} {length == 1 ? "Task" : "Tasks"}
+      <h3>
+        {length} {length == 1 ? "Task" : "Tasks"}
+      </h3>
     </footer>
   );
 };

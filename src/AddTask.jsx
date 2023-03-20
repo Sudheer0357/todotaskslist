@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 const AddTask = ({ setNewTask, newTask, handleSubmit }) => {
   const ref = useRef(null);
@@ -12,7 +13,9 @@ const AddTask = ({ setNewTask, newTask, handleSubmit }) => {
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button onClick={() => ref.current.focus()}>Add Task</button>
+      <button className="btn btn-primary" onClick={() => ref.current.focus()}>
+        Add Task
+      </button>
     </form>
   );
 };

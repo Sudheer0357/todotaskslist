@@ -3,10 +3,12 @@ import AddTask from "./AddTask";
 import Content from "./Content";
 import Footer from "./Footer";
 import Header from "./Header";
+import Search from "./Search";
 
 function App() {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")));
   const [newTask, setNewTask] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +39,11 @@ function App() {
   };
   const handleDelete = (id) => {
     const newList = tasks.filter((task) => task.id !== id);
-    setTasks(newList);
+    setAndSaveTasks(newList);
+  };
+  const handleSeach = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
   };
 
   return (
@@ -48,11 +54,16 @@ function App() {
         newTask={newTask}
         handleSubmit={handleSubmit}
       />
-      <Content
-        tasks={tasks}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-      />
+      <Search search={search} handleSeach={handleSeach} />
+      <main>
+        <Content
+          tasks={tasks.filter((task) =>
+            task.taskName.toLowerCase().includes(search.toLowerCase())
+          )}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />
+      </main>
       <Footer length={tasks.length} />
     </div>
   );
