@@ -6,12 +6,13 @@ import Header from "./Header";
 import Search from "./Search";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
   const [newTask, setNewTask] = useState("");
   const [search, setSearch] = useState("");
   useEffect(() => {
-    tasks,
-      length ? localStorage.setItem("tasks", JSON.stringify(taskList)) : [];
+    tasks.length ? localStorage.setItem("tasks", JSON.stringify(tasks)) : [];
   }, []);
 
   const handleSubmit = (e) => {
