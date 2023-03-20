@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
+  min-width: 400px;
   height: 100vh;
   max-width: 600px;
   width: 100%;
@@ -104,4 +105,10 @@ button:hover {
 }
 .input-div input[type="text"], .search-form input{
   flex-grow: 1;
+}
+
+@media screen and (max-width :480px) {
+.App{
+  min-height: 700px;
+}
 }
